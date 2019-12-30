@@ -181,7 +181,7 @@ class NodeScopeResolver
 	}
 
 	/**
-	 * @param \PhpParser\Node[] $nodes
+	 * @param array<int, \PhpParser\Node> $nodes
 	 * @param \PHPStan\Analyser\MutatingScope $scope
 	 * @param \Closure(\PhpParser\Node $node, Scope $scope): void $nodeCallback
 	 */

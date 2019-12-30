@@ -261,11 +261,17 @@ class MutatingScope implements Scope
 		);
 	}
 
+	/**
+	 * @psalm-assert-if-true !null $this->getclassreflection()
+	 */
 	public function isInClass(): bool
 	{
 		return $this->context->getClassReflection() !== null;
 	}
 
+	/**
+	 * @psalm-assert-if-true !null $this->gettraitreflection()
+	 */
 	public function isInTrait(): bool
 	{
 		return $this->context->getTraitReflection() !== null;

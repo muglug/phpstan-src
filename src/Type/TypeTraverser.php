@@ -5,7 +5,7 @@ namespace PHPStan\Type;
 class TypeTraverser
 {
 
-	/** @var callable(Type $type, callable(Type): Type $traverse): Type */
+	/** @var callable(Type, callable(Type): Type): Type */
 	private $cb;
 
 	/**
@@ -30,7 +30,7 @@ class TypeTraverser
 	 *     return new MixedType();
 	 * });
 	 *
-	 * @param callable(Type $type, callable(Type): Type $traverse): Type $cb
+	 * @param callable(Type, callable(Type): Type): Type $cb
 	 */
 	public static function map(Type $type, callable $cb): Type
 	{
@@ -39,7 +39,7 @@ class TypeTraverser
 		return $self->mapInternal($type);
 	}
 
-	/** @param callable(Type $type, callable(Type): Type $traverse): Type $cb */
+	/** @param callable(Type, callable(Type): Type): Type $cb */
 	private function __construct(callable $cb)
 	{
 		$this->cb = $cb;

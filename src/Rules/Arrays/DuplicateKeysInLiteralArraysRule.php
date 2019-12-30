@@ -49,6 +49,7 @@ class DuplicateKeysInLiteralArraysRule implements \PHPStan\Rules\Rule
 			}
 
 			$printedValue = $this->printer->prettyPrintExpr($key);
+			/** @var int|string */
 			$value = $keyType->getValue();
 			$printedValues[$value][] = $printedValue;
 

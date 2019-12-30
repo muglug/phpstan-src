@@ -20,6 +20,9 @@ interface Scope extends ClassMemberAccessAnswerer
 
 	public function isDeclareStrictTypes(): bool;
 
+	/**
+	 * @psalm-assert-if-true !null $this->gettraitreflection()
+	 */
 	public function isInTrait(): bool;
 
 	public function getTraitReflection(): ?ClassReflection;

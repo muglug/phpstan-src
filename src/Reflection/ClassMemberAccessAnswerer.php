@@ -4,7 +4,9 @@ namespace PHPStan\Reflection;
 
 interface ClassMemberAccessAnswerer
 {
-
+	/**
+	 * @psalm-assert-if-true !null $this->getclassreflection()
+	 */
 	public function isInClass(): bool;
 
 	public function getClassReflection(): ?ClassReflection;
